@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { DynamicFieldComponent } from './dynamic-field.component';
@@ -8,15 +8,19 @@ import { DynamicFieldComponent } from './dynamic-field.component';
   templateUrl: './dynamic-form.component.html'
 })
 
-export class DynamicFormComponent {
+export class DynamicFormComponent implements OnInit {
   public fieldData;
   questionForm: FormGroup;
+  @Input() q;
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.questionForm = new FormGroup({});
-    this.http.get('http://localhost:8888/1.json')
+  }
+
+  ngOnInit() {
+    this.http.get('http://localhost:8888/' + this.q + '.json')
       .toPromise()
-      .then(r => this.setupForm(r));
+      .then(r => this.setupForm(r), () => { alert('No such a question'); });
   }
 
   setupForm(r) {

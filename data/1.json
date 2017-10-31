@@ -4,7 +4,8 @@
     {
       "id": "text1",
       "type": "text",
-      "label": "Title"
+      "label": "Title",
+      "value": "ตัวอย่าง auto fill"
     },
     {
       "id": "text2",

@@ -1,0 +1,37 @@
+{
+  "title": "Dynamic form #2",
+  "fields": [
+    {
+      "id": "firstname",
+      "type": "text",
+      "label": "ชื่อ"
+    },
+    {
+      "id": "lastname",
+      "type": "text",
+      "label": "นามสกุล"
+    },
+    {
+      "id": "emailAddress",
+      "label": "อีเมล",
+      "type": "email",
+      "placeholder": "อีเมลแอดเดรส เช่น myemail@mail.com"
+    },
+    {
+      "id": "gender",
+      "label": "เพศ",
+      "type": "dropdown",
+      "value": "male",
+      "options": [
+        {
+          "value": "male",
+          "label": "ชาย"
+        },
+        {
+          "value": "female",
+          "label": "หญิง"
+        }
+      ]
+    }
+  ]
+}
