@@ -1,0 +1,11 @@
+<div>
+  <form (ngSubmit)="onSubmit(questionForm)" [formGroup]="questionForm">
+    <div *ngIf="fieldData">
+      <h1>{{fieldData.title}}</h1>
+      <div *ngFor="let data of fieldData.fields">
+        <dynamic-field [data]="data" [form]="questionForm"></dynamic-field>
+      </div>
+    </div>
+    <button type="submit">Save</button>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<div [formGroup]="form" [ngSwitch]="data.type">
+  <label for="{{data.id}}">{{data.label}}</label>
+  <input type="text" id="{{data.id}}" name="{{data.id}}" [formControlName]="data.id" *ngSwitchCase="'text'" placeholder="{{data.placeholder}}">
+  <input type="email" id="{{data.id}}" name="{{data.id}}" [formControlName]="data.id" *ngSwitchCase="'email'" placeholder="{{data.placeholder}}">
+  <select id={{data.id}} name="{{data.id}}" [formControlName]="data.id" *ngSwitchCase="'dropdown'">
+    <option *ngFor="let opt of data.options" value="opt.value">{{opt.label}}</option>
+  </select>
+</div>
