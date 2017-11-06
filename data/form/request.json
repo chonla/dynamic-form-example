@@ -1,0 +1,37 @@
+[{
+  "type": "text",
+  "required": true,
+  "label": "Title",
+  "className": "form-control",
+  "name": "text-1509958451259",
+  "subtype": "text"
+}, {
+  "type": "text",
+  "label": "Sub Title",
+  "className": "form-control",
+  "name": "text-1509958475157",
+  "subtype": "text"
+}, {
+  "type": "text",
+  "subtype": "email",
+  "label": "Email",
+  "placeholder": "e@mail.com",
+  "className": "form-control",
+  "name": "text-1509958477874"
+}, {
+  "type": "select",
+  "label": "Select Something",
+  "className": "form-control",
+  "name": "select-1509958490816",
+  "values": [{
+    "label": "Value 1",
+    "value": "value-1",
+    "selected": true
+  }, {
+    "label": "Value 2",
+    "value": "value-2"
+  }, {
+    "label": "Value 3",
+    "value": "value-3"
+  }]
+}]

@@ -11,14 +11,14 @@ import { DynamicFieldComponent } from './dynamic-field.component';
 export class DynamicFormComponent implements OnInit {
   public fieldData;
   questionForm: FormGroup;
-  @Input() q;
+  @Input() document;
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.questionForm = new FormGroup({});
   }
 
   ngOnInit() {
-    this.http.get('http://localhost:8888/' + this.q + '.json')
+    this.http.get('http://localhost:8888/request/' + this.document + '.json')
       .toPromise()
       .then(r => this.setupForm(r), () => { alert('No such a question'); });
   }
