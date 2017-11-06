@@ -32,7 +32,7 @@ import { DynamicFieldComponent } from './dynamic-field.component';
         redirectTo: '/request/1'
       },
       {
-        path: 'request/:id',
+        path: ':form/:id',
         component: QuestionFormComponent
       }
     ])

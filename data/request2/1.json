@@ -1,0 +1,40 @@
+{
+  "title": "Dynamic form",
+  "fields": [
+    {
+      "id": "text1",
+      "type": "text",
+      "label": "Title",
+      "value": "ตัวอย่าง auto fill"
+    },
+    {
+      "id": "emailAddress",
+      "label": "Email",
+      "type": "email",
+      "placeholder": "e@mail.com"
+    },
+    {
+      "id": "dropdown1",
+      "label": "Select something",
+      "type": "dropdown",
+      "options": [
+        {
+          "value": "value1",
+          "label": "Value 1"
+        },
+        {
+          "value": "value2",
+          "label": "Value 2"
+        },
+        {
+          "value": "value3",
+          "label": "Value 3"
+        },
+        {
+          "value": "value4",
+          "label": "Value 4"
+        }
+      ]
+    }
+  ]
+}

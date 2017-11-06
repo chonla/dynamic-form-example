@@ -9,8 +9,10 @@ import { HttpClient } from '@angular/common/http';
 
 export class QuestionFormComponent {
   public document;
+  public form;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.document = route.snapshot.paramMap.get('id');
+    this.form = route.snapshot.paramMap.get('form');
   }
 }
