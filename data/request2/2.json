@@ -5,7 +5,12 @@
       "id": "text1",
       "type": "text",
       "label": "Title",
-      "value": "data ไม่มี text2"
+      "value": "form ไม่มี text2 แต่ data มีเกิน"
+    },
+    {
+      "id": "text2",
+      "type": "text",
+      "label": "Sub Title"
     },
     {
       "id": "emailAddress",
