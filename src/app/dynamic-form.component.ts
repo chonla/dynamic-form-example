@@ -20,33 +20,32 @@ export class DynamicFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://localhost:8888/form/'+ this.form + '.json')
+    this.http.get('http://localhost:8888/form/' + this.form + '.json')
       .toPromise()
-      .then(r => this.setupForm2(r), () => { alert('No such form'); })
-    this.http.get('http://localhost:8888/'+ this.form +'/' + this.document + '.json')
+      .then(r => this.setupForm(r), () => { alert('No such form'); });
+    this.http.get('http://localhost:8888/' + this.form + '/' + this.document + '.json')
       .toPromise()
-      .then(r => this.setupForm(r), () => { alert('No such document'); });
+      .then(r => this.populateData(r), () => { alert('No such document'); });
   }
 
-  setupForm2(r) {
-    console.log(r);
-    this.fields = r;
+  setupForm(fields) {
+    this.fields = fields;
   }
 
-  setupForm(r) {
+  populateData(r) {
     const form = {};
     this.fieldData = r;
     console.log('r', this.fieldData);
     for (let i = 0; i < this.fields.length; i++) {
-      console.log(this.fields[i].name);
-      console.log(this.fieldData.fields[i].value);
-      form[this.fields[i].name] = [this.fieldData.fields[i].value];
+      const key = this.fields[i].name;
+      const field = r.fields.find((f) => f.id === key);
+      form[key] = [field.value];
     }
-    console.log(form);
+    console.log('form', form);
     this.questionForm = this.fb.group(form);
   }
 
-  onSubmit(form) {
-    console.log(form.value);
+  onSubmit() {
+    console.log(JSON.stringify(this.questionForm.value));
   }
 }
