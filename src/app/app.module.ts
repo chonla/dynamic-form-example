@@ -24,7 +24,18 @@ import { DynamicFieldComponent } from './dynamic-field.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/request/1'
+      },
+      {
+        path: 'request/:id',
+        component: QuestionFormComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent],
